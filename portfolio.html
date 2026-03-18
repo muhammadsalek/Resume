@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md Salek Miah | Statistician & Public Health Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0D2240;
+  --navy-mid: #1A3A5C;
+  --blue: #1A5276;
+  --accent: #C0392B;
+  --gold: #D4AC0D;
+  --gold-light: #F9E79F;
+  --cream: #FAF8F3;
+  --cream-dark: #F0EDE4;
+  --text: #1C1C1C;
+  --text-muted: #5D6D7E;
+  --text-light: #8E99A4;
+  --border: #D5D8DC;
+  --white: #FFFFFF;
+  --green: #1E8449;
+  --orange: #D35400;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 3px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(13, 34, 64, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--gold);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 1.1rem;
+  color: var(--white); letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex; gap: 0.2rem; list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border-radius: 3px;
+  transition: all 0.25s;
+}
+.nav-links a:hover { color: var(--gold); background: rgba(212,172,13,0.1); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.hero-bg-pattern {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.5) 39px, rgba(255,255,255,0.5) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.5) 39px, rgba(255,255,255,0.5) 40px);
+  pointer-events: none;
+}
+
+.hero-left {
+  padding: 5rem 3rem 5rem 5rem;
+  position: relative; z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block; width: 40px; height: 2px;
+  background: var(--gold);
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+.hero-name .highlight { color: var(--gold); }
+
+.hero-title {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-bottom: 2.5rem;
+}
+.stat-box {
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.3rem;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.75rem 1.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: #F0C800; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,172,13,0.3); }
+
+.btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
+  padding: 0.75rem 1.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.hero-right {
+  display: flex; align-items: center; justify-content: center;
+  padding: 4rem;
+  position: relative; z-index: 2;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%; max-width: 380px;
+  backdrop-filter: blur(4px);
+}
+
+.profile-photo-placeholder {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--accent));
+  margin: 0 auto 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; font-weight: 700;
+  color: white;
+  border: 4px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 40px rgba(212,172,13,0.3);
+}
+
+.hero-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: white; text-align: center;
+  font-size: 1.25rem; margin-bottom: 0.25rem;
+}
+.hero-card .subtitle { color: var(--gold); text-align: center; font-size: 0.85rem; font-style: italic; margin-bottom: 1.5rem; }
+
+.info-list { list-style: none; }
+.info-list li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+.info-list li:last-child { border-bottom: none; }
+.info-icon { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+.social-links {
+  display: flex; justify-content: center; gap: 0.75rem;
+  margin-top: 1.5rem; flex-wrap: wrap;
+}
+.social-link {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+.social-link:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ─── SECTIONS ─── */
+.section {
+  padding: 6rem 0;
+}
+.section-alt { background: var(--white); }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.section-rule {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ─── ABOUT / PROFILE ─── */
+.profile-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: start;
+}
+
+.profile-text p {
+  margin-bottom: 1.2rem;
+  font-size: 1.02rem;
+  color: var(--text);
+  line-height: 1.85;
+}
+
+.profile-text p strong { color: var(--navy); }
+
+.research-interests h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cream-dark);
+}
+
+.interest-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.interest-tag {
+  background: var(--navy);
+  color: white;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.edu-card {
+  background: var(--cream-dark);
+  border-left: 4px solid var(--navy);
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1rem;
+}
+.edu-card h4 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1rem; }
+.edu-card .institution { color: var(--text-muted); font-size: 0.9rem; margin: 0.3rem 0; }
+.edu-card .period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+.edu-card .gpa-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+.course-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.course-chip {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ─── PUBLICATIONS ─── */
+.pub-filter {
+  display: flex; gap: 0.6rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.4rem 1.1rem;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: white;
+}
+
+.pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.pub-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.pub-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--navy);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.3s;
+}
+.pub-card:hover::before { transform: scaleY(1); }
+.pub-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateX(4px); }
+
+.pub-card.published::before { background: var(--green); transform: scaleY(1); }
+.pub-card.under-review::before { background: var(--gold); }
+.pub-card.preprint::before { background: var(--orange); }
+
+.pub-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  min-width: 40px;
+  text-align: right;
+}
+.pub-card.published .pub-num { color: rgba(30,132,73,0.25); }
+
+.pub-content h4 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.98rem; font-weight: 600;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.pub-journal {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.6rem;
+}
+.pub-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.badge-q1 { background: rgba(13,34,64,0.1); color: var(--navy); border: 1px solid rgba(13,34,64,0.25); }
+.badge-q2 { background: rgba(26,82,118,0.1); color: var(--blue); border: 1px solid rgba(26,82,118,0.25); }
+.badge-q3 { background: rgba(26,82,118,0.07); color: var(--blue); }
+.badge-published { background: rgba(30,132,73,0.12); color: var(--green); border: 1px solid rgba(30,132,73,0.25); }
+.badge-review { background: rgba(212,172,13,0.12); color: #A08A00; border: 1px solid rgba(212,172,13,0.3); }
+.badge-preprint { background: rgba(211,84,0,0.1); color: var(--orange); border: 1px solid rgba(211,84,0,0.25); }
+.badge-doi { background: rgba(13,34,64,0.06); color: var(--navy); text-transform: none; font-size: 0.63rem; }
+
+.pub-doi {
+  text-decoration: none;
+  color: var(--navy);
+}
+.pub-doi:hover { color: var(--accent); }
+
+/* ─── RESEARCH / PROJECTS ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.project-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+
+.project-header {
+  background: var(--navy);
+  padding: 1.5rem 1.75rem;
+  position: relative;
+}
+.project-header .project-icon {
+  font-size: 2rem; margin-bottom: 0.5rem;
+}
+.project-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: white; font-size: 1.1rem;
+  line-height: 1.4;
+}
+.project-header .project-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.4rem;
+}
+
+.project-body { padding: 1.5rem 1.75rem; }
+.project-body p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+
+.method-list { list-style: none; margin-bottom: 1.2rem; }
+.method-list li {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.84rem; color: var(--text);
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--cream-dark);
+}
+.method-list li::before { content: '→'; color: var(--accent); font-weight: bold; flex-shrink: 0; }
+.method-list li:last-child { border-bottom: none; }
+
+.tech-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.tech-tag {
+  background: var(--cream-dark);
+  color: var(--navy);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid var(--navy);
+  padding-bottom: 0.1rem;
+  transition: all 0.2s;
+}
+.project-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ─── SKILLS ─── */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.skill-group { margin-bottom: 2.5rem; }
+.skill-group-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.skill-item { margin-bottom: 1rem; }
+.skill-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem; }
+.skill-name {
+  font-size: 0.88rem; font-weight: 600; color: var(--text);
+  font-family: 'Source Serif 4', serif;
+}
+.skill-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.skill-bar {
+  height: 4px; background: var(--cream-dark);
+  border-radius: 2px; overflow: hidden;
+}
+.skill-fill {
+  height: 100%; background: linear-gradient(to right, var(--navy), var(--blue));
+  border-radius: 2px;
+  transform-origin: left;
+  animation: fillBar 1s ease-out both;
+}
+@keyframes fillBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.software-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.software-item {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.9rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+.software-item:hover { background: var(--navy); border-color: var(--navy); }
+.software-item:hover .sw-name { color: white; }
+.software-item:hover .sw-type { color: var(--gold); }
+.sw-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+.sw-type {
+  font-size: 0.7rem;
+  color: var(--text-light);
+}
+
+/* ─── EXPERIENCE ─── */
+.timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 140px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--navy), transparent);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.timeline-date {
+  text-align: right;
+  padding-right: 2rem;
+  padding-top: 0.2rem;
+}
+.timeline-date .year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.timeline-dot {
+  position: absolute;
+  left: 134px; top: 0.4rem;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--navy);
+  z-index: 1;
+}
+.timeline-content {
+  padding-left: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  margin-left: 2rem;
+}
+.timeline-content h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy); font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.timeline-content .org {
+  font-style: italic; color: var(--accent);
+  font-size: 0.9rem; margin-bottom: 0.8rem;
+}
+.timeline-content ul { padding-left: 1.2rem; }
+.timeline-content li {
+  font-size: 0.9rem; color: var(--text);
+  margin-bottom: 0.4rem; line-height: 1.6;
+}
+
+/* ─── AWARDS ─── */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.award-card {
+  display: flex; gap: 1.2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.25s;
+}
+.award-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-3px); }
+
+.award-icon {
+  font-size: 2rem; flex-shrink: 0;
+  width: 56px; height: 56px;
+  background: var(--gold-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.award-info h4 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.4rem; }
+.award-info p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+.award-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: var(--accent);
+  letter-spacing: 0.08em; margin-top: 0.4rem;
+}
+
+/* ─── CERTIFICATIONS ─── */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.cert-card {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+  transition: all 0.2s;
+}
+.cert-card:hover { background: var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+.cert-badge {
+  width: 42px; height: 42px; flex-shrink: 0;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.cert-badge.ml { background: rgba(13,34,64,0.1); }
+.cert-badge.stats { background: rgba(211,84,0,0.1); }
+.cert-info h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; line-height: 1.4; }
+.cert-info p { font-size: 0.78rem; color: var(--text-muted); }
+.cert-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--navy);
+}
+.cert-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ─── AFFILIATIONS ─── */
+.affiliations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.affil-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-top: 3px solid var(--navy);
+  transition: all 0.2s;
+}
+.affil-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
+.affil-card h4 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.5rem; }
+.affil-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.affil-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.5rem;
+}
+
+/* ─── CONTACT ─── */
+#contact {
+  background: var(--navy);
+  color: white;
+  padding: 6rem 0;
+}
+.contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.contact-inner .section-title { color: white; }
+.contact-inner .section-eyebrow { color: var(--gold); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: white; margin-bottom: 1rem;
+}
+.contact-info p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem; line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  transition: all 0.25s;
+}
+.contact-item:hover { background: rgba(212,172,13,0.15); border-color: var(--gold); color: white; }
+.contact-item-icon {
+  font-size: 1.2rem;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-item-text { flex: 1; }
+.contact-item-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block; margin-bottom: 0.1rem;
+}
+.contact-item-value { font-size: 0.9rem; }
+
+.phd-appeal {
+  background: rgba(212,172,13,0.1);
+  border: 1.5px solid rgba(212,172,13,0.4);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.phd-appeal h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold); font-size: 1.3rem; margin-bottom: 1rem;
+}
+.phd-appeal p { color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1rem; }
+.phd-appeal strong { color: white; }
+.phd-focus-list { list-style: none; margin: 1rem 0; }
+.phd-focus-list li {
+  display: flex; gap: 0.7rem;
+  color: rgba(255,255,255,0.8); font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+.phd-focus-list li::before { content: '◆'; color: var(--gold); font-size: 0.6rem; flex-shrink: 0; margin-top: 0.35rem; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #070F1A;
+  padding: 2.5rem;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+footer a { color: var(--gold); text-decoration: none; }
+
+/* ─── ANIMATIONS ─── */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  animation: fadeIn 0.7s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+.fade-in-1 { animation-delay: 0.1s; }
+.fade-in-2 { animation-delay: 0.25s; }
+.fade-in-3 { animation-delay: 0.4s; }
+.fade-in-4 { animation-delay: 0.55s; }
+.fade-in-5 { animation-delay: 0.7s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 4rem 2rem 4rem 2rem; }
+  .profile-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .timeline::before { left: 0; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-date { display: none; }
+  .timeline-dot { display: none; }
+  .timeline-content { margin-left: 0; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .pub-card { grid-template-columns: 1fr; }
+  .pub-num { display: none; }
+  .software-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <div class="nav-logo">Md Salek <span>Miah</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Profile</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-in fade-in-1">Research Portfolio · PhD Applicant 2025</div>
+
+    <h1 class="hero-name fade-in fade-in-2">
+      Md Salek<br/><span class="highlight">Miah</span>
+    </h1>
+
+    <p class="hero-title fade-in fade-in-2">
+      Statistician · Epidemiology &amp; Public Health · Machine Learning
+    </p>
+
+    <p class="hero-desc fade-in fade-in-3">
+      Research statistician at Shahjalal University of Science and Technology (SUST), specialising
+      in epidemiological modelling, spatial health analysis, and machine-learning applications
+      to maternal &amp; child health in low- and middle-income countries.
+    </p>
+
+    <div class="hero-stats fade-in fade-in-3">
+      <div class="stat-box">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Manuscripts<br/>Under Review</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Published<br/>Articles</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Conference<br/>Presentations</div>
+      </div>
+    </div>
+
+    <div class="hero-btns fade-in fade-in-4">
+      <a href="#publications" class="btn-primary">📄 View Publications</a>
+      <a href="#contact" class="btn-outline">✉ Contact Me</a>
+    </div>
+  </div>
+
+  <div class="hero-right fade-in fade-in-3">
+    <div class="hero-card">
+      <div class="profile-photo-placeholder">SM</div>
+      <h3>Md Salek Miah</h3>
+      <p class="subtitle">Research Statistician &amp; ML Specialist</p>
+      <ul class="info-list">
+        <li>
+          <span class="info-icon">🎓</span>
+          <span>B.Sc. Statistics, SUST · 3rd Year</span>
+        </li>
+        <li>
+          <span class="info-icon">📍</span>
+          <span>Sylhet, Bangladesh</span>
+        </li>
+        <li>
+          <span class="info-icon">🔬</span>
+          <span>CHINTA Research Bangladesh · Research Fellow</span>
+        </li>
+        <li>
+          <span class="info-icon">📧</span>
+          <span>2021134066@student.sust.edu</span>
+        </li>
+        <li>
+          <span class="info-icon">🌐</span>
+          <span>Supervisor: Dr. Md Jamal Uddin, SUST</span>
+        </li>
+      </ul>
+      <div class="social-links">
+        <a href="https://github.com/muhammadsalek" class="social-link" target="_blank">GitHub</a>
+        <a href="https://www.kaggle.com/muhammadsalekmiah" class="social-link" target="_blank">Kaggle</a>
+        <a href="https://orcid.org/0009-0005-5704-0155" class="social-link" target="_blank">ORCID</a>
+        <a href="https://www.researchgate.net/profile/Md-Miah-142" class="social-link" target="_blank">ResearchGate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT / PROFILE ═══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 01</span>
+      <h2 class="section-title">Research Profile</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-text">
+        <p>
+          I am a third-year undergraduate student of Statistics at <strong>Shahjalal University of Science and Technology (SUST)</strong>, Bangladesh, and a Research Fellow at <strong>CHINTA Research Bangladesh</strong>. My work lies at the intersection of epidemiology, spatial statistics, and machine learning — with a focus on maternal and child health disparities in South Asia and Sub-Saharan Africa.
+        </p>
+        <p>
+          I have authored or co-authored <strong>15+ manuscripts</strong> currently under review in top-tier Q1 journals (Scientific Reports, BMC Women's Health, BMJ Open, PLOS ONE, Social Science &amp; Medicine), and have one published article in <strong>BMC Women's Health (Springer Nature)</strong>.
+        </p>
+        <p>
+          My methodological expertise spans <strong>complex survey analysis, machine learning with imbalanced data (SMOTE), geospatial/choropleth mapping, structural equation modelling, multilevel models, and interpretable AI (SHAP/LIME)</strong>. I build end-to-end research pipelines from national DHS datasets to peer-reviewed publications and interactive Shiny applications.
+        </p>
+        <p>
+          I am seeking a <strong>funded PhD position</strong> in Biostatistics, Epidemiology, or Public Health to extend this work into causal inference, Bayesian spatial modelling, and global health inequalities.
+        </p>
+      </div>
+
+      <div>
+        <div class="research-interests">
+          <h3>Research Interests</h3>
+          <div class="interest-tags">
+            <span class="interest-tag">Maternal &amp; Child Health</span>
+            <span class="interest-tag">Spatial Epidemiology</span>
+            <span class="interest-tag">Machine Learning in Health</span>
+            <span class="interest-tag">DHS / Survey Analysis</span>
+            <span class="interest-tag">Mental Health (LMICs)</span>
+            <span class="interest-tag">Health Disparities</span>
+            <span class="interest-tag">Water Quality &amp; Environment</span>
+            <span class="interest-tag">Interpretable AI (SHAP)</span>
+            <span class="interest-tag">Multilevel Modelling</span>
+            <span class="interest-tag">Bayesian Statistics</span>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <h4>B.Sc. (Honours) in Statistics</h4>
+          <div class="institution">Shahjalal University of Science and Technology (SUST)</div>
+          <div class="period">2021 – PRESENT · 3rd Year, 2nd Semester</div>
+          <div class="gpa-note">GPA: 3.5 – 4.00/4.00 in major statistical courses</div>
+          <div class="course-chips">
+            <span class="course-chip">Probability</span>
+            <span class="course-chip">Regression Analysis</span>
+            <span class="course-chip">Statistical Inference</span>
+            <span class="course-chip">Sampling Techniques</span>
+            <span class="course-chip">Machine Learning</span>
+            <span class="course-chip">Epidemiological Methods</span>
+            <span class="course-chip">Demography</span>
+            <span class="course-chip">Stochastic Process</span>
+            <span class="course-chip">R / Python / STATA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<section id="publications" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 02</span>
+      <h2 class="section-title">Publications &amp; Manuscripts</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="pub-filter">
+      <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('published', this)">Published</button>
+      <button class="filter-btn" onclick="filterPubs('under-review', this)">Under Review</button>
+      <button class="filter-btn" onclick="filterPubs('preprint', this)">Preprint</button>
+    </div>
+
+    <div class="pub-list" id="pubList">
+
+      <!-- PUBLISHED -->
+      <div class="pub-card published" data-type="published">
+        <div class="pub-num">01</div>
+        <div class="pub-content">
+          <h4>Associations of Internet Use and Pregnancy Loss with Depression and Anxiety among Women in Bangladesh: Evidence from the 2022 BDHS</h4>
+          <div class="pub-journal">BMC Women's Health, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-published">✓ Published</span>
+            <a href="https://doi.org/10.1186/s12905-025-04166-4" target="_blank" class="badge badge-doi pub-doi">DOI: 10.1186/s12905-025-04166-4</a>
+            <span style="font-size:0.78rem;color:var(--text-muted);">Published 29 November 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card published" data-type="published">
+        <div class="pub-num">02</div>
+        <div class="pub-content">
+          <h4>Identifying the Determinants of Depression among Ever-Married Women in Bangladesh: A Machine Learning Approach</h4>
+          <div class="pub-journal">International Journal of Statistical Sciences, Vol. 25, No. 2, pp. 33–46, November 2025</div>
+          <div class="pub-meta">
+            <span class="badge badge-published">✓ Published</span>
+            <a href="https://doi.org/10.3329/ijss.v25i2.85733" target="_blank" class="badge badge-doi pub-doi">DOI: 10.3329/ijss.v25i2.85733</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNDER REVIEW Q1 -->
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">03</div>
+        <div class="pub-content">
+          <h4>Machine Learning Analysis of Factors Influencing Skilled Birth Attendance in Burkina Faso: Assessing Spatial Inequalities Using Imbalanced Survey Data</h4>
+          <div class="pub-journal">Scientific Reports, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">04</div>
+        <div class="pub-content">
+          <h4>Exploring Determinants and Spatial Inequalities of Quality Antenatal Care in Nepal Using Machine Learning on Complex Survey Data</h4>
+          <div class="pub-journal">Scientific Reports, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">05</div>
+        <div class="pub-content">
+          <h4>Identifying Key Determinants and Spatial Insights of Skilled Birth Assistance in Bangladesh: A Machine Learning Approach from BDHS 2022</h4>
+          <div class="pub-journal">Scientific Reports, Nature Portfolio</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">06</div>
+        <div class="pub-content">
+          <h4>Risk Factors for Anxiety and Depression Among Ever-Married Women in Zambia: Provincial-Level Analysis from the 2023–24 ZDHS</h4>
+          <div class="pub-journal">BMC Psychology, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">07</div>
+        <div class="pub-content">
+          <h4>Associations of Women's Empowerment and Intimate Partner Violence with Mental Health Among Ever-Married Women in Bangladesh</h4>
+          <div class="pub-journal">Archives of Women's Mental Health, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">08</div>
+        <div class="pub-content">
+          <h4>Rural-Urban and Division-Wise Determinants of Intimate Partner Violence among Married Women in Bangladesh: Spatial Insights from Nationally Representative Data</h4>
+          <div class="pub-journal">Social Science &amp; Medicine, Elsevier</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">09</div>
+        <div class="pub-content">
+          <h4>Child Undernutrition and Household WASH Practices in Bangladesh: Insights from National Data</h4>
+          <div class="pub-journal">PLOS ONE</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);">MS ID: PONE-D-25-45488</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">10</div>
+        <div class="pub-content">
+          <h4>Comparative Determinants of Single and Multiple Pregnancy Loss among Women in Bangladesh: Insights from BDHS 2022</h4>
+          <div class="pub-journal">BMJ Open, British Medical Journal Publishers</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);">MS ID: bmjopen-2025-110570</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">11</div>
+        <div class="pub-content">
+          <h4>Risk Factors and Spatial Patterns of Mental Health Among Ever-Married Women in Bangladesh and Nepal: A Cross-Country Analysis of DHS 2022</h4>
+          <div class="pub-journal">BMC Women's Health, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">12</div>
+        <div class="pub-content">
+          <h4>Digital Connectivity and Mental Health Among Women in Bangladesh: A Rural-Urban Perspective</h4>
+          <div class="pub-journal">BMC Public Health, BioMed Central &amp; Springer</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">13</div>
+        <div class="pub-content">
+          <h4>Determinants and Spatial Variation of Skilled Birth Attendance in Nepal: Insights from NDHS 2022</h4>
+          <div class="pub-journal">BMC Pregnancy and Childbirth, Springer Nature</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">In Peer Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">14</div>
+        <div class="pub-content">
+          <h4>Machine Learning-Based Prediction of the CCME Water Quality Index in the Buriganga River, Bangladesh</h4>
+          <div class="pub-journal">Agrosystems, Geosciences &amp; Environment, Wiley</div>
+          <div class="pub-meta">
+            <span class="badge badge-q2">Q2</span>
+            <span class="badge badge-review">Under Review</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);">MS ID: AGE-2025-11-0444-OA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">15</div>
+        <div class="pub-content">
+          <h4>Child Stunting and Handwashing Access: Spatial and Stratified Insights from a National Survey</h4>
+          <div class="pub-journal">PLOS Global Public Health</div>
+          <div class="pub-meta">
+            <span class="badge badge-q1">Q1</span>
+            <span class="badge badge-review">Under Review</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);">MS ID: PGPH-D-25-03146</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="pub-card under-review" data-type="under-review">
+        <div class="pub-num">16</div>
+        <div class="pub-content">
+          <h4>Machine Learning-Based Classification of Air Quality in Bangladesh: A Comparative Evaluation of XGBoost and Random Forest</h4>
+          <div class="pub-journal">Bangladesh Journal of Medical Science (Scopus Indexed)</div>
+          <div class="pub-meta">
+            <span class="badge badge-q3">Q3</span>
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREPRINTS -->
+      <div class="pub-card preprint" data-type="preprint">
+        <div class="pub-num">P1</div>
+        <div class="pub-content">
+          <h4>Determinants and Spatial Variation of Skilled Birth Assistance in Nepal: Insights from NDHS 2022</h4>
+          <div class="pub-journal">Preprint (Research Square)</div>
+          <div class="pub-meta">
+            <span class="badge badge-preprint">Preprint</span>
+            <a href="https://doi.org/10.21203/rs.3.rs-7973803/v1" target="_blank" class="badge badge-doi pub-doi">DOI: 10.21203/rs.3.rs-7973803/v1</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card preprint" data-type="preprint">
+        <div class="pub-num">P2</div>
+        <div class="pub-content">
+          <h4>Associations of Women's Empowerment and Intimate Partner Violence with Mental Health Among Ever-Married Women in Bangladesh</h4>
+          <div class="pub-journal">Preprint (Research Square)</div>
+          <div class="pub-meta">
+            <span class="badge badge-preprint">Preprint</span>
+            <a href="https://doi.org/10.21203/rs.3.rs-7473860/v1" target="_blank" class="badge badge-doi pub-doi">DOI: 10.21203/rs.3.rs-7473860/v1</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card preprint" data-type="preprint">
+        <div class="pub-num">P3</div>
+        <div class="pub-content">
+          <h4>Association Between Child Stunting and Handwashing Facility with Spatial and Stratified Analysis Among Under-Five Children in Bangladesh</h4>
+          <div class="pub-journal">Research Square</div>
+          <div class="pub-meta">
+            <span class="badge badge-preprint">Preprint</span>
+            <a href="https://doi.org/10.21203/rs.3.rs-7114856/v1" target="_blank" class="badge badge-doi pub-doi">DOI: 10.21203/rs.3.rs-7114856/v1</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pub-list -->
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 03</span>
+      <h2 class="section-title">Research Projects &amp; Apps</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🗺️</div>
+          <h3>Maternal Health Risk Factors Dashboard</h3>
+          <div class="project-type">R Shiny · Spatial Analysis · DHS Data</div>
+        </div>
+        <div class="project-body">
+          <p>Interactive epidemiological dashboard enabling country-level exploration of skilled birth attendance determinants across Bangladesh, Nepal, and Burkina Faso using DHS survey data.</p>
+          <ul class="method-list">
+            <li>Complex survey-weighted logistic regression</li>
+            <li>XGBoost &amp; Random Forest with SMOTE</li>
+            <li>SHAP importance plots &amp; forest plots</li>
+            <li>Choropleth spatial mapping (tmap/sf)</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R Shiny</span>
+            <span class="tech-tag">survey pkg</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">SHAP</span>
+            <span class="tech-tag">tmap</span>
+            <span class="tech-tag">ggplot2</span>
+          </div>
+          <a href="https://sites.google.com/view/mdsalekmiah/home" target="_blank" class="project-link">View Portfolio →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">💧</div>
+          <h3>Water Quality Intelligence Platform — Buriganga River</h3>
+          <div class="project-type">R Shiny · Environmental ML · Time Series</div>
+        </div>
+        <div class="project-body">
+          <p>Real-time water quality monitoring app for the Buriganga River, Dhaka. Supports urban health decision-making with ML-based WQI prediction and trend analysis over 10 years.</p>
+          <ul class="method-list">
+            <li>CCME Water Quality Index calculation</li>
+            <li>XGBoost predictive modelling</li>
+            <li>10-year trend &amp; seasonality decomposition</li>
+            <li>GIS-linked spatial risk visualisation</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R Shiny</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">leaflet</span>
+            <span class="tech-tag">forecast</span>
+            <span class="tech-tag">dplyr</span>
+          </div>
+          <a href="https://salek.shinyapps.io/aqualens/" target="_blank" class="project-link">Live Demo →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🎬</div>
+          <h3>MovieLens Recommendation System</h3>
+          <div class="project-type">R · Collaborative Filtering · HuggingFace</div>
+        </div>
+        <div class="project-body">
+          <p>Collaborative filtering recommendation app using the MovieLens dataset. Deployed on Hugging Face Spaces with interactive genre &amp; rating-based filtering.</p>
+          <ul class="method-list">
+            <li>User-based collaborative filtering</li>
+            <li>Matrix factorisation (SVD)</li>
+            <li>Interactive Shiny UI on HuggingFace</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R Studio</span>
+            <span class="tech-tag">recommenderlab</span>
+            <span class="tech-tag">Shiny</span>
+            <span class="tech-tag">HuggingFace</span>
+          </div>
+          <a href="https://huggingface.co/spaces/salekml/MovieLens_App1" target="_blank" class="project-link">Live Demo →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🌤️</div>
+          <h3>Weather Monitoring &amp; Forecast App</h3>
+          <div class="project-type">R Shiny · API Integration · Forecasting</div>
+        </div>
+        <div class="project-body">
+          <p>Interactive weather dashboard with real-time data feeds and time-series climate forecasting. Deployed on Hugging Face Spaces for public access.</p>
+          <ul class="method-list">
+            <li>ARIMA / ETS forecasting models</li>
+            <li>Live weather API integration</li>
+            <li>Interactive plots (Plotly &amp; ggplot2)</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R Shiny</span>
+            <span class="tech-tag">httr</span>
+            <span class="tech-tag">forecast</span>
+            <span class="tech-tag">plotly</span>
+          </div>
+          <a href="https://huggingface.co/spaces/salekml/Weather_app" target="_blank" class="project-link">Live Demo →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🧮</div>
+          <h3>Interactive Statistical Calculator</h3>
+          <div class="project-type">R Shiny · Statistics Education</div>
+        </div>
+        <div class="project-body">
+          <p>A comprehensive statistical toolkit built for students and researchers — covering hypothesis testing, distribution calculators, regression diagnostics, and more.</p>
+          <ul class="method-list">
+            <li>Hypothesis testing (t, chi-sq, ANOVA, F)</li>
+            <li>Probability distribution calculators</li>
+            <li>Regression diagnostics &amp; plots</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R Shiny</span>
+            <span class="tech-tag">stats</span>
+            <span class="tech-tag">ggplot2</span>
+            <span class="tech-tag">DT</span>
+          </div>
+          <a href="https://qa8m8h-md0salek-miah.shinyapps.io/calculator/" target="_blank" class="project-link">Live Demo →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">❤️</div>
+          <h3>Cardiovascular Disease Risk — Predictive Modelling</h3>
+          <div class="project-type">Machine Learning · Survival Analysis · Conference</div>
+        </div>
+        <div class="project-body">
+          <p>Comprehensive ML pipeline for CVD risk prediction presented at the 14th Al Farabi International Scientific Research Congress, Türkiye, April 2025.</p>
+          <ul class="method-list">
+            <li>Kaplan–Meier &amp; Cox proportional hazards</li>
+            <li>XGBoost, SVM, Random Forest comparison</li>
+            <li>ROC-AUC, Brier score evaluation</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">R</span>
+            <span class="tech-tag">survival</span>
+            <span class="tech-tag">caret</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">pROC</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 04</span>
+      <h2 class="section-title">Technical &amp; Statistical Skills</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="skills-layout">
+      <div>
+        <div class="skill-group">
+          <div class="skill-group-title">Statistical Methods</div>
+
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Complex Survey Analysis</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Logistic / Multilevel Regression</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Survival Analysis (Cox / KM)</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Structural Equation Modelling</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Bayesian Statistics</span><span class="skill-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Time Series Analysis</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Machine Learning</div>
+
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">XGBoost / Random Forest</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">SHAP / LIME Interpretability</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Imbalanced Data (SMOTE)</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Deep Learning (CNN / RNN)</span><span class="skill-level">Intermediate</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-group">
+          <div class="skill-group-title">Programming Languages &amp; Tools</div>
+          <div class="software-grid">
+            <div class="software-item">
+              <div class="sw-name">R / Shiny</div>
+              <div class="sw-type">Primary</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">Python</div>
+              <div class="sw-type">Advanced</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">STATA</div>
+              <div class="sw-type">Advanced</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">SPSS</div>
+              <div class="sw-type">Proficient</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">LaTeX</div>
+              <div class="sw-type">Advanced</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">SAS</div>
+              <div class="sw-type">Working</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">ArcGIS</div>
+              <div class="sw-type">Advanced</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">QGIS</div>
+              <div class="sw-type">Advanced</div>
+            </div>
+            <div class="software-item">
+              <div class="sw-name">Power BI</div>
+              <div class="sw-type">Proficient</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:1.5rem;">
+          <div class="skill-group-title">Geospatial Analysis</div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Choropleth / Spatial Mapping</span><span class="skill-level">Expert</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Spatial Autocorrelation (Moran's I)</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">GeoPandas / sf / tmap / spdep</span><span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 05</span>
+      <h2 class="section-title">Research &amp; Teaching Experience</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date"><div class="year">Apr 2025<br/>– Present</div></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Research Fellow</h3>
+          <div class="org">CHINTA Research Bangladesh</div>
+          <ul>
+            <li>Lead statistician for multiple public health projects using national DHS survey data.</li>
+            <li>Developed machine learning models for disease prediction with 89%+ accuracy.</li>
+            <li>Authored 5+ manuscripts currently under review in Q1 journals.</li>
+            <li>Mentored junior researchers in statistical methods and research methodology.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date"><div class="year">Mar 2025<br/>– Present</div></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Research Assistant</h3>
+          <div class="org">TeamCSBD (Remote)</div>
+          <ul>
+            <li>Conducted statistical analyses for health disparities research using STATA, R, and Python.</li>
+            <li>Developed reproducible research pipelines with comprehensive documentation.</li>
+            <li>Created interactive dashboards for data exploration and result communication.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date"><div class="year">Jan–Jul 2025</div></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Research &amp; Higher Study Training Program</h3>
+          <div class="org">Cognitive Solution Bangladesh (CSBD)</div>
+          <ul>
+            <li>Completed intensive research training in public health and epidemiology.</li>
+            <li>Contributed to project on child stunting trends and WASH practices in Bangladesh.</li>
+            <li>Supervised by epidemiologist Sabbir Ahmed, Ministry of Health, Saskatchewan, Canada.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date"><div class="year">Nov 2024<br/>– Present</div></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Workshop Instructor</h3>
+          <div class="org">SUST Research Science Club</div>
+          <ul>
+            <li>Conducts hands-on workshops on R programming, statistical analysis, and data visualisation.</li>
+            <li>Developed comprehensive workshop materials used by 150+ participants.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date"><div class="year">2022<br/>– Present</div></div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Statistics &amp; Mathematics Tutor</h3>
+          <div class="org">Local Coaching Centers, Sylhet</div>
+          <ul>
+            <li>Develops customised lesson plans for diverse learners; 1-on-1 and small group sessions.</li>
+            <li>Students improved exam scores by an average of 1.5 letter grades.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section id="awards" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 06</span>
+      <h2 class="section-title">Awards &amp; Honours</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div class="award-info">
+          <h4>Runner-up — Poster Competition</h4>
+          <p>6th Bangladesh Economics Summit</p>
+          <div class="award-year">2025 · 10,000 BDT</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🧬</div>
+        <div class="award-info">
+          <h4>Winner — DNA Day Writing Contest</h4>
+          <p>International Society of Computational Biology (ISCB), RSG Bangladesh</p>
+          <div class="award-year">2025</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">💻</div>
+        <div class="award-info">
+          <h4>Top 10 Performer — Data Hackathon</h4>
+          <p>Comilla University</p>
+          <div class="award-year">2025</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🎓</div>
+        <div class="award-info">
+          <h4>Scholarship Recipient</h4>
+          <p>Aftab Uddin – Khudeja Banu Welfare Trust UK</p>
+          <div class="award-year">2016 · 10,000 BDT</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🌍</div>
+        <div class="award-info">
+          <h4>Scholarship Recipient</h4>
+          <p>Khandoker Trust International</p>
+          <div class="award-year">2013 · Charity Commission UK Verified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section id="certifications" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 07</span>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Machine Learning &amp; Data Science</h3>
+    <div class="certs-grid" style="margin-bottom:2.5rem;">
+      <div class="cert-card">
+        <div class="cert-badge ml">🤖</div>
+        <div class="cert-info">
+          <h4>Data Science and Machine Learning with Python</h4>
+          <p>Coursera · Jan 2025</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/KFLBF6GVUPN2" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge ml">📊</div>
+        <div class="cert-info">
+          <h4>Data Analysis with R</h4>
+          <p>IBM via Coursera · Oct 2024 · ID: PWID-B0442600</p>
+          <a href="https://www.credly.com/badges/188b2932-e9b8-4d30-b09c-7d574274d219" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge ml">🔍</div>
+        <div class="cert-info">
+          <h4>Exploratory Data Analysis for Machine Learning</h4>
+          <p>IBM · Jan 2025 · 14 hours</p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/KFLBF6GVUPN2" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge ml">🐍</div>
+        <div class="cert-info">
+          <h4>Machine Learning using Python</h4>
+          <p>Simplilearn</p>
+          <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI2ODciLCJjZXJ0aWZpY2F0ZV91cmwiOiJodHRwczpcL1wvY2VydGlmaWNhdGVzLnNpbXBsaWNkbi5uZXRcL1wvdGh1bWJfNzQyNTIzNl8xNzI3OTQ0NTQzLnBuZyIsInVzZXJuYW1lIjoiTUQgU2FsZWsgTWlhaCJ9" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge ml">🧠</div>
+        <div class="cert-info">
+          <h4>Deep Learning for Beginners</h4>
+          <p>Simplilearn</p>
+          <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9cL3RodW1iXzczNTI4MTRfMTcyNTYwMjMyNC5wbmciLCJ1c2VybmFtZSI6Ik1EIFNhbGVrIE1pYWgifQ" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1rem;font-size:1.1rem;">Statistics</h3>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-badge stats">📈</div>
+        <div class="cert-info">
+          <h4>Inferential Statistics</h4>
+          <p>Great Learning — ANOVA, Probability, Hypothesis Testing</p>
+          <a href="https://www.mygreatlearning.com/certificate/XJVWDGTN" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge stats">🔢</div>
+        <div class="cert-info">
+          <h4>Statistics for Machine Learning</h4>
+          <p>Great Learning — Correlation, Descriptive Stats</p>
+          <a href="https://www.mygreatlearning.com/certificate/HGKSTJWE" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge stats">📉</div>
+        <div class="cert-info">
+          <h4>Statistics for Data Science</h4>
+          <p>Great Learning — Probability, Normal Dist, CLT</p>
+          <a href="https://www.mygreatlearning.com/certificate/KKCWJPSJ" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge stats">📐</div>
+        <div class="cert-info">
+          <h4>Data Science Mathematics</h4>
+          <p>Great Learning — Mathematical Foundations</p>
+          <a href="https://www.mygreatlearning.com/certificate/CDXQTYKK" target="_blank" class="cert-link">Verify ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AFFILIATIONS ═══ -->
+<section id="affiliations" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 08</span>
+      <h2 class="section-title">Professional Affiliations</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="affiliations-grid">
+      <div class="affil-card">
+        <div class="affil-role">Research Supervisor</div>
+        <h4>Biostatistics, Epidemiology &amp; Public Health Research Team, SUST</h4>
+        <p>Collaborator under Dr. Md Jamal Uddin, Professor of Biostatistics &amp; Epidemiology, Dept. of Statistics, SUST. Email: jamal-sta@sust.edu</p>
+      </div>
+      <div class="affil-card">
+        <div class="affil-role">Member</div>
+        <h4>International Society for Computational Biology (ISCB)</h4>
+        <p>Member of ISCB RSG Bangladesh chapter; winner of DNA Day Writing Contest 2025.</p>
+      </div>
+      <div class="affil-card">
+        <div class="affil-role">Student Member</div>
+        <h4>Bangladesh Statistical Association (BSA)</h4>
+        <p>Active participant in national statistics conferences and academic events.</p>
+      </div>
+      <div class="affil-card">
+        <div class="affil-role">Research Collaborator</div>
+        <h4>CHINTA Research Bangladesh</h4>
+        <p>Research Fellow since April 2025; lead statistician on multiple public health projects.</p>
+      </div>
+      <div class="affil-card">
+        <div class="affil-role">Research Collaborator</div>
+        <h4>DATAKOTHON Research Lab</h4>
+        <p>Collaborative data science research and analysis projects.</p>
+      </div>
+      <div class="affil-card">
+        <div class="affil-role">Member</div>
+        <h4>SUST Data Science Club</h4>
+        <p>Workshop instructor and active organiser of data science events at SUST.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">§ 09</span>
+      <h2 class="section-title">Contact &amp; PhD Interest</h2>
+      <div class="section-rule" style="background:linear-gradient(to right,rgba(255,255,255,0.2),transparent);"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>
+          I am actively seeking funded PhD positions in <strong>Biostatistics, Epidemiology, or Global Public Health</strong> for 2025/2026 intake. I am particularly interested in research involving spatial health inequalities, machine learning applications in LMICs, and causal inference in observational studies.
+        </p>
+
+        <a href="mailto:2021134066@student.sust.edu" class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Email</span>
+            <span class="contact-item-value">2021134066@student.sust.edu</span>
+          </div>
+        </a>
+        <a href="tel:+8801687831074" class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Phone</span>
+            <span class="contact-item-value">+880 1687 831074</span>
+          </div>
+        </a>
+        <a href="https://github.com/muhammadsalek" target="_blank" class="contact-item">
+          <div class="contact-item-icon">💻</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">GitHub</span>
+            <span class="contact-item-value">github.com/muhammadsalek</span>
+          </div>
+        </a>
+        <a href="https://orcid.org/0009-0005-5704-0155" target="_blank" class="contact-item">
+          <div class="contact-item-icon">🆔</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">ORCID</span>
+            <span class="contact-item-value">0009-0005-5704-0155</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/md-salek-miah-b34309329" target="_blank" class="contact-item">
+          <div class="contact-item-icon">🔗</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">LinkedIn</span>
+            <span class="contact-item-value">md-salek-miah-b34309329</span>
+          </div>
+        </a>
+        <a href="https://sites.google.com/view/mdsalekmiah/home" target="_blank" class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Portfolio</span>
+            <span class="contact-item-value">sites.google.com/view/mdsalekmiah</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="phd-appeal">
+        <h3>🎓 PhD Research Interests</h3>
+        <p>
+          My research trajectory has been shaped by a clear question: <strong>why do maternal and child health outcomes differ so dramatically within and between low-income countries — and what can data science do about it?</strong>
+        </p>
+        <p>
+          I bring a rare combination for a pre-PhD researcher: independent publication record in Q1 journals, hands-on machine learning deployment, geospatial analysis expertise, and strong quantitative foundations from coursework and self-directed study.
+        </p>
+        <ul class="phd-focus-list">
+          <li>Spatial epidemiology &amp; health inequalities in LMICs</li>
+          <li>Causal inference in observational health data</li>
+          <li>Bayesian hierarchical models for survey data</li>
+          <li>Interpretable ML for clinical &amp; public health decision support</li>
+          <li>Global maternal &amp; child health (SDG 3 targets)</li>
+        </ul>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);">
+          Available for interviews. References available on request from Dr. Md Jamal Uddin, SUST, Bangladesh.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>© 2025 Md Salek Miah · Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
+  <p style="margin-top:0.5rem;">Built with R (Quarto + Shiny) &amp; GitHub Pages · <a href="https://orcid.org/0009-0005-5704-0155" target="_blank">ORCID: 0009-0005-5704-0155</a></p>
+</footer>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script>
+// Publication filter
+function filterPubs(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  document.querySelectorAll('.pub-card').forEach(card => {
+    if (type === 'all' || card.dataset.type === type) {
+      card.style.display = 'grid';
+      card.style.animation = 'fadeIn 0.4s ease forwards';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.pub-card, .project-card, .award-card, .cert-card, .affil-card, .timeline-content').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = `opacity 0.5s ease ${(i % 5) * 0.07}s, transform 0.5s ease ${(i % 5) * 0.07}s`;
+  observer.observe(el);
+});
+
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 100;
+  sections.forEach(sec => {
+    const top = sec.offsetTop, h = sec.offsetHeight;
+    const link = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+    if (link) {
+      if (y >= top && y < top + h) link.style.color = '#D4AC0D';
+      else link.style.color = '';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
